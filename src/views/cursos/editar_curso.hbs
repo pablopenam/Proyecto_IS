@@ -1,0 +1,134 @@
+
+  <!-- partial -->
+  <div class="container-fluid page-body-wrapper">
+    <!-- partial:partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+        <br>
+        <br>
+        <br>
+        <br><br>
+        <br>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="mdi mdi-home menu-icon"></i>
+            <span class="menu-title">Menú Principal</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <i class="mdi mdi-circle-outline menu-icon"></i>
+            <span class="menu-title">Rúbricas</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Nueva Rubrica</a></li>
+              <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Rubricas Guardadas</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- partial -->
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-md-12 grid-margin">
+            <div class="d-flex justify-content-between flex-wrap">
+              <div class="d-flex align-items-end flex-wrap">
+                <div class="mr-md-3 mr-xl-5">
+                  <h2>Bienvenido,</h2>
+                  <p class="mb-md-0">Acontinuación se mostraran sus carpetas.</p>
+                </div>
+                <div class="d-flex">
+                  <i class="mdi mdi-home text-muted hover-cursor"></i>
+                  <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Menú Principal&nbsp;/&nbsp;</p>
+                  <p class="text-primary mb-0 hover-cursor">Carpetas</p>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <!-- modal nueva carpeta -->
+  
+
+        <div class="row">
+          <div class="col-md-12 stretch-card">
+            <div class="card">
+              <div class="card-body">
+              <h5 class="card-title">Ingresar nuevo Curso</h5>
+              <hr>
+              <form name="formulario" class="mt-3" action="/curso/editarCurso/{{curso.Id_Curso}}" method="POST">
+
+                    <div class=" row form-group">
+                        <label for="Nombre_Curso" class="col-form-label col-md-2">Nombre:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control ml2" name="Nombre_Curso" id="reg_rut" maxlength="50" value="{{curso.Nombre_Curso}}"
+                                  required>
+                        </div>
+                    </div>
+                  
+                    <div class="row form-group">
+                        <label for="Anho_Curso" class="col-form-label col-md-2">Año:</label>
+                        <div class="col-md-3">
+                            <input type="number" class="form-control" name="Anho_Curso" id="reg_password" min="2019"
+                                max="2100" value="{{curso.Anho_Curso}}"  required>
+                        </div>
+                        <label for="Anho_Curso" class="col-form-label col-md-3">Sección:</label>
+                        <div class="col-md-4">
+                            <input type="number" class="form-control" name="Seccion_Curso" id="reg_password"
+                                maxlength="20" min="1" max="20" value="{{curso.Seccion_Curso}}" required>
+                        </div>
+                    </div>
+                <input type="hidden" name="Id_Carpeta" value="{{curso.Id_Carpeta}}">
+                    <div class=" row form-group">
+                        <label for="Descripcion_Curso" class="col-form-label col-md-2">Descripción:</label>
+                        <div class="col-md-10">
+                            <textarea name="Descripcion_Curso" class="form-control" value="" rows="4" maxlength="150"
+                                required>{{curso.Descripcion_Curso}}</textarea>
+                        </div>
+                    </div>
+                  
+                    <hr>
+                    <div class="row form-group mt-2">
+                   <div class="col-md-4 col-sm-12 "><a href="/curso/verCurso/{{curso.Id_Carpeta}}" class="btn-sm w-50 btn btn-success">volver</a></div>
+                    <div class="col-md-4 mx-auto "></div>
+                  <div class="col-md-4 col-sm-12 "><input type="submit" class="float-right w-50 btn btn-success btn-sm" style="color: white; background-color: #143FDE;" value="Crear"></div>
+                </div>
+                </form>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+ 
+
+  <!-- plugins:js -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="/js/dashboard.js"></script>
+  <script src="/js/data-table.js"></script>
+  <script src="/js/dataTables.bootstrap4.js"></script>
+  <script src="/js/hoverable-collapse.js"></script>
+  <script src="/js/jquery.dataTables.js"></script>
+  <script src="/js/off-canvas.js"></script>
+  <script src="/js/vendor.bundle.base.js"></script>

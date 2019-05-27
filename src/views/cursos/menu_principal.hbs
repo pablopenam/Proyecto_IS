@@ -1,0 +1,128 @@
+<div class="container-fluid page-body-wrapper">
+  <!-- partial:partials/_sidebar.html -->
+  <nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+      <br>
+      <br>
+      <br>
+      <br><br>
+      <br>
+      <li class="nav-item">
+        <a class="nav-link" href="/curso/principal">
+          <i class="mdi mdi-home menu-icon"></i>
+          <span class="menu-title">Menú Principal</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <i class="mdi mdi-circle-outline menu-icon"></i>
+          <span class="menu-title">Rúbricas</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="ui-basic">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="/curso/addRubrica">Nueva Rubrica</a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Rubricas Guardadas</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- partial -->
+  <div class="main-panel">
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-md-12 grid-margin">
+          <div class="d-flex justify-content-between flex-wrap">
+            <div class="d-flex align-items-end flex-wrap">
+              <div class="mr-md-3 mr-xl-5">
+                <h2>Bienvenido,</h2>
+                <p class="mb-md-0">Acontinuación se mostraran sus carpetas.</p>
+              </div>
+              <div class="d-flex">
+                <i class="mdi mdi-home text-muted hover-cursor"></i>
+                <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Menú Principal&nbsp;/&nbsp;</p>
+                <p class="text-primary mb-0 hover-cursor">Carpetas</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-end flex-wrap">
+
+              <a class="btn btn-primary mt-2 mt-xl-0" style="color: white; background-color: #143FDE;" href="/curso/addCarpeta"><i
+                  class="mdi mdi-plus "></i>Nueva Carpeta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- modal nueva carpeta -->
+
+
+      <div class="row">
+        <div class="col-md-12 stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-title ">Carpetas</p>
+              <hr>
+              <div class="row">
+                {{#each carpetas}}
+
+                <div class="col-md-4 mx-auto mt-4">
+                  <div class="card">
+                    <div class="row ">
+
+                      <div class="card-sm mx-auto align-text-bottom  col-md-6" style="margin-left: 0;">
+                        <a href="/curso/verCurso/{{Id_Carpeta}}" style="text-decoration: none; color:#143FDE;"><span
+                            class="text-uppercase">{{Nombre_carpeta}}</span></a>
+                      </div>
+                      <div class="card-sm  col-md-4 p-2 ">
+                        <a href="/curso/eliminar/{{Id_Carpeta}}" class="btn btn-danger btn-sm"><i
+                            class="mdi mdi-delete"></i></a>
+                        <a href="/curso/editarCarpeta/{{Id_Carpeta}}" class="btn btn-secondary btn-sm"><i
+                            class="mdi mdi-border-color"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {{else}}
+
+                <div class="col-md-4 mx-auto">
+                  <p>No hay Carpetas creadas!!</p>
+                  <p>Haz Click<a href="/curso/addCarpeta"> aqui </a> para Crear Una</p>
+                </div>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- content-wrapper ends -->
+      <!-- partial:partials/_footer.html -->
+
+      <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="/js/dashboard.js"></script>
+  <script src="/js/data-table.js"></script>
+  <script src="/js/dataTables.bootstrap4.js"></script>
+  <script src="/js/hoverable-collapse.js"></script>
+  <script src="/js/jquery.dataTables.js"></script>
+  <script src="/js/off-canvas.js"></script>
+  <script src="/js/vendor.bundle.base.js"></script>
