@@ -61,13 +61,14 @@
                 <div class="card-body">
               <h5 class="card-title ">Ingresar nuevo Alumno</h5>
               <hr>
-              <form name="formulario" class="mt-3" action="/curso/add" method="POST">
+              <form name="formulario" class="mt-3" action="/curso/addAlumno/{{Id_Curso}}" method="POST">
 
                     <div class=" row form-group">
                         <label for="Rut_Alumno" class="col-form-label col-md-2">Rut:</label>
                         <div class="col-md-2">
-                            <input type="text" class="form-control ml2" name="Rut_Alumno" id="Rut_Alumno" maxlength="50" value="{{Rut_Alumno}}"
+                            <input type="text" class="form-control ml2" name="" id="" maxlength="50" value="{{Rut_Alumno}}"
                                 placeholder="Rut" disabled  required>
+                                <input type="hidden" name="Rut_Alumno" value="{{Rut_Alumno}}">
                         </div>
                     </div>
                      <div class=" row form-group">
@@ -109,7 +110,7 @@
                   <div class="row form-group mt-2">
                   <div class="col-md-4 col-sm-12 "><a href="/curso/mostarCurso/{{Id_Curso}}" class="btn-sm w-50 btn btn-success">volver</a></div>
                   <div class="col-md-4 mx-auto "></div>
-                  <div class="col-md-4 col-sm-12 "><input type="submit" class="float-right w-50 btn btn-success btn-sm" style="color: white; background-color: #143FDE;" value="Incribir"></div>
+                  <div class="col-md-4 col-sm-12 "><input type="submit" class="float-right w-50 btn btn-success btn-sm" style="color: white; background-color: #143FDE;" value="Registrar e Inscribir"></div>
                 </div>
                 </form>
                 </div>

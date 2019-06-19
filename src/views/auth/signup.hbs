@@ -1,34 +1,12 @@
-
-  <!-- div del cuerpo -->
-   <div class="mt-5">    
-<div class="card mx-auto" style="width: 20rem;">
-  <img src="/img/foto.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda placeat libero eum rem facere, nisi facilis repellendus doloremque distinctio cumque blanditiis repudiandae quae, optio velit nihil quibusdam corporis nobis vel.</p>
-  </div>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
-  Launch demo modal
-</button>
-</div>
-</div>
-
-   
-    <!--ventanas modales -->
-   <div>
-   
-<!-- Modal -->
-<div class="modal fade bd-example-modal-lg" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel1">Registrarse</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+<div class="container-fluid page-body-wrapper">
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <div class="card-header">
+                <h3>Registrarse</h3>
             </div>
-            <div class="modal-body">
-                <form name="formulario" class="mt-3" action="/signup" method="POST">
+            <div class="card-body">
+             <form name="formulario" class="mt-3" action="/signup" method="POST">
 
                     <div class=" row form-group">
                         <label for="Rut_Usuario" class="col-form-label col-md-3">Rut:</label>
@@ -92,57 +70,12 @@
         </div>
     </div>
 </div>
-
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog " role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Inicio Sesion</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form name="formulario" class="mt-3" action="/signin" method="POST">
-
-                    <div class=" row form-group">
-                        <label for="usuario" class="col-form-label col-md-3">Rut:</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" name="usuario" id="usuario" maxlength="50"
-                                placeholder="Ingrese Rut"  required>
-                        </div>
-                        
-                    </div>
-
-                    <div class="row form-group">
-                        <label for="password" class="col-form-label col-md-3">Constraseña:</label>
-                        <div class="col-md-6">
-                            <input type="password" class="form-control" name="password" id="password" 
-                                 placeholder="" required>
-                        </div>
-                      
-                    </div>
-                    
-                  <hr>
-                    <div class="row form-group mt-2">
-                        <div class = "col-md-12 "><input type="submit" class="form-control btn btn-success" value="Ingresar"></div>
-                    </div>
-
-                  
-                    
-                    
-                </form>
-            </div>
-        </div>
-    </div>
 </div>
+ 
+  
 
-
-    
-   </div>
+  
+ 
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>

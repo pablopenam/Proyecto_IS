@@ -55,6 +55,7 @@
       <!-- modal nueva carpeta -->
 
 
+
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
@@ -82,7 +83,7 @@
                   <div class="col-md-4 "> <a class="btn  mt-2 mt-xl-0 btn-sm"
                       style="color: white; background-color: #143FDE;" href="/curso/addAlumno/{{curso.Id_Curso}}"><i
                         class="mdi mdi-plus "></i>Nuevo Alumno</a></div>
-                  <div class="col-md-4 "></div>
+                  <div class="col-md-2 btn btn-success " id="btnNuevoCriterio" onclick="tablas();">contar</div>
                   <div class="col-md-4 "></div>
                 </div>
 
@@ -91,7 +92,7 @@
             </div>
             <br>
             <div class="table-responsive mt-3 ">
-              <table class="table table-bordered">
+              <table class="table table-bordered" id="tabla_curso">
                 <thead>
                   <tr>
                     <th>
@@ -107,20 +108,23 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {{#each cursando}}
+                  {{#each alumno }}
+                
                   <tr>
-                    <td>{{Rut_Alumno}}</td>
-                    <td class="text-uppercase">{{NombreP_Alumno}} {{NombreS_Alumno}} {{ApellidoP_Alumno}}
-                      {{ApellidoM_Alumno}}</td>
+                  
+                    <td>{{alumno.Rut_Alumno}}</td>
+                    <td class="text-uppercase">{{RowDataPacket.NombreP_Alumno}} {{NombreS_Alumno}} {{ApellidoP_Alumno}} {{ApellidoM_Alumno}}</td>
                     <td></td>
+                  
                   </tr>
+                 
                   {{else}}
 
                   <div class="col-md-4 mx-auto">
                     <p>No hay Alumnos inscritos en este Curso</p>
 
                   </div>
-
+                    
                   {{/each}}
                 </tbody>
               </table>
@@ -152,7 +156,7 @@
 <!-- container-scroller -->
 
 <!-- plugins:js -->
-
+<script src="/js/agregarcriterio.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

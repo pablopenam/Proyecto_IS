@@ -20,6 +20,8 @@
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="ui-basic">
+
+        
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="/curso/addRubrica">Nueva Rubrica</a></li>
             <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Rubricas Guardadas</a>
@@ -37,19 +39,12 @@
         <div class="col-md-12 grid-margin">
           <div class="d-flex justify-content-between flex-wrap">
             <div class="d-flex align-items-end flex-wrap">
-              <div class="mr-md-3 mr-xl-5">
-                <h2>Bienvenido,</h2>
-                <p class="mb-md-0">Acontinuación se mostraran sus carpetas.</p>
-              </div>
-              <div class="d-flex">
-                <i class="mdi mdi-home text-muted hover-cursor"></i>
-                <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Menú Principal&nbsp;/&nbsp;</p>
-                <p class="text-primary mb-0 hover-cursor">Carpetas</p>
-              </div>
+      
+              
             </div>
             <div class="d-flex justify-content-between align-items-end flex-wrap">
 
-              <a class="btn btn-primary mt-2 mt-xl-0" style="color: white; background-color: #143FDE;" href="/curso/addCarpeta"><i
+              <a class="btn btn-primary mt-2 mt-xl-0" style="color: white; background-color: #143FDE;" href="/carpeta/addCarpeta"><i
                   class="mdi mdi-plus "></i>Nueva Carpeta</a>
             </div>
           </div>
@@ -63,8 +58,49 @@
           <div class="card">
             <div class="card-body">
               <p class="card-title ">Carpetas</p>
+   
               <hr>
               <div class="row">
+                {{#if message}}
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="close" data-dismiss="alert" >
+                        <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{{/if}}
+
+{{#if success}}
+<div class="container p-4 mt-200">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{success}}
+                <button type="button" class="close" data-dismiss="alert" >
+                        <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{{/if}}
+
                 {{#each carpetas}}
 
                 <div class="col-md-4 mx-auto mt-4">
@@ -76,9 +112,9 @@
                             class="text-uppercase">{{Nombre_carpeta}}</span></a>
                       </div>
                       <div class="card-sm  col-md-4 p-2 ">
-                        <a href="/curso/eliminar/{{Id_Carpeta}}" class="btn btn-danger btn-sm"><i
+                        <a href="/carpeta/eliminar/{{Id_Carpeta}}" class="btn btn-danger btn-sm"><i
                             class="mdi mdi-delete"></i></a>
-                        <a href="/curso/editarCarpeta/{{Id_Carpeta}}" class="btn btn-secondary btn-sm"><i
+                        <a href="/carpeta/editarCarpeta/{{Id_Carpeta}}" class="btn btn-secondary btn-sm"><i
                             class="mdi mdi-border-color"></i></a>
                       </div>
                     </div>
@@ -88,7 +124,7 @@
 
                 <div class="col-md-4 mx-auto">
                   <p>No hay Carpetas creadas!!</p>
-                  <p>Haz Click<a href="/curso/addCarpeta"> aqui </a> para Crear Una</p>
+                  <p>Haz Click<a href="/carpeta/addCarpeta"> aqui </a> para Crear Una</p>
                 </div>
                 {{/each}}
               </div>

@@ -10,7 +10,7 @@ const session = require('express-session');
 const MySQLStore = require('express-mysql-session');
 const passport = require('passport');
 
-const {database}= require('./keys');
+const { database } = require('./keys');
 
 //initializations
 const app = express();
@@ -34,22 +34,24 @@ app.use(session({
     secret: 'pablo',
     resave: false,
     saveUninitialized: false,
-    store: new MySQLStore( database)
+    store: new MySQLStore(database)
 
 }));
 app.use(flash());
 app.use(morgan('dev'));
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(passport.initialize());
-app.use(passport.session());   
+app.use(passport.session());
 
 
 /**ESTAS SON VARIABLES GLOBALES*/
-app.unlock((req, res, next) => { 
-   
+app.use((req, res, next) => {
+
     app.locals.success = req.flash('success');
     app.locals.message = req.flash('message');
+    app.locals.user = req.user;
+
     next();
 });
 
@@ -57,13 +59,14 @@ app.unlock((req, res, next) => {
 app.use(require('./routes'));
 app.use(require('./routes/auntentificacion'));
 app.use('/curso', require('./routes/curso'));
+app.use('/rubrica', require('./routes/rubricas'));
+app.use('/carpeta', require('./routes/carpeta'));
 app.use('/usuario', require('./routes/usuario'));
 //public
 app.use(express.static(path.join(__dirname, 'public')));
 
 /**AQUI LA APLICACCION ESCUCHA EN PUERTO EN DONDE SE CONECTARA AL SERVIDOR */
 
-app.listen(app.get('port'), () =>{
+app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'));
 });
-
