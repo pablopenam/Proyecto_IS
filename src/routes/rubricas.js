@@ -4,7 +4,6 @@ const pool = require("../database");
 const { isLoggedIn } = require('../lib/auth')
 
 router.get("/prueba", (req, res) => {
-
     res.render("cursos/prueba");
 });
 router.get("/rubrica3/:id_rubrica", (req, res) => {
