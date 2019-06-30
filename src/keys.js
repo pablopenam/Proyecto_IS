@@ -1,4 +1,4 @@
-/** Se almacenan los  */
+/** datos de la base de datos  */
 module.exports = {
     database: {
         host: 'localhost',

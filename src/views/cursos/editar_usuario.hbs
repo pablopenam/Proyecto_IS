@@ -1,0 +1,100 @@
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-md-12 grid-margin">
+            <div class="d-flex justify-content-between flex-wrap">
+              <div class="d-flex align-items-end flex-wrap">
+                <div class="mr-md-3 mr-xl-5">
+                  <h2>Bienvenido,</h2>
+                  <p class="mb-md-0">Acontinuación se mostraran sus carpetas.</p>
+                </div>
+                <div class="d-flex">
+                  <i class="mdi mdi-home text-muted hover-cursor"></i>
+                  <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Menú Principal&nbsp;/&nbsp;</p>
+                  <p class="text-primary mb-0 hover-cursor">CrearCarpeta</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal nueva carpeta -->
+
+          <div class="row">
+          <div class="col-md-12 stretch-card">
+            <div class="card">
+              <div class="card-body">
+             <form name="formulario" class="mt-3" action="/signup" method="POST">
+
+                    <div class=" row form-group">
+                        <label for="Rut_Usuario" class="col-form-label col-md-3">Rut:</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="Rut_Usuario" id="Rut_Usuario" maxlength="50"
+                                placeholder="{{usuario.Rut_Usuario}}"  required>
+                        </div>
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="NombreP_Usuario" class="col-form-label col-md-3">Primer Nombre:</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="NombreP_Usuario" id="NombreP_Usuario" 
+                                 placeholder="{{usuario.NombreP_Usuario}}" required>
+                        </div>
+                        <label for="NombreS_Usuario" class="col-form-label col-md-3">Segundo Nombre:</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="NombreS_Usuario" id="NombreS_Usuario"
+                                maxlength="20"  placeholder="{{usuario.NombreS_Usuario}}" required>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="ApellidoP_Usuario" class="col-form-label col-md-3">Apellido Pat.:</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="ApellidoP_Usuario" id="ApellidoP_Usuario" 
+                                 placeholder="{{usuario.ApellidoP_Usuario}}" required>
+                        </div>
+                        <label for="ApellidoM_Usuario" class="col-form-label col-md-3">Apellido Mat.:</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="ApellidoM_Usuario" id="ApellidoM_Usuario"
+                                maxlength="20"  placeholder="{{usuario.ApellidoM_Usuario}}" required>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="Email_Usuario" class="col-form-label col-md-3">Email:</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="Email_Usuario" id="Email_Usuario" 
+                                 placeholder="{{usuario.Email_Usuario}}" required>
+                        </div>
+                        <label for="Password_Usuario" class="col-form-label col-md-3">Desactivar Cuenta:</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="Password_Usuario" id="Password_Usuario"
+                                maxlength="20"  placeholder="{{usuario.Password_Usuario}}" required>
+                        </div>
+                    </div>
+                  <hr>
+                    <div class="row form-group mt-2">
+                        <div class = "col-md-4"><input type="text" class="form-control"></div>
+                        <div class = "col-md-4"></div>
+                        <div class = "col-md-4"><input type="submit" class="form-control"></div>
+                    </div>
+
+                  
+                    
+                    
+                </form>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+  
+
+  

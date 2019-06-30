@@ -1,0 +1,77 @@
+
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-md-12 grid-margin">
+            <div class="d-flex justify-content-between flex-wrap">
+              <div class="d-flex align-items-end flex-wrap">
+                <div class="mr-md-3 mr-xl-5">
+                  <h2>Bienvenido,</h2>
+                  <p class="mb-md-0">Acontinuación se mostraran sus carpetas.</p>
+                </div>
+                <div class="d-flex">
+                  <i class="mdi mdi-home text-muted hover-cursor"></i>
+                  <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Menú Principal&nbsp;/&nbsp;</p>
+                  <p class="text-primary mb-0 hover-cursor">CrearCarpeta</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal nueva carpeta -->
+
+         <div class="table-responsive mt-3 ">
+              <table class="table table-bordered" id="tabla_curso">
+                <thead>
+                  <tr>
+                    <th>
+                      <span>Rut Usuario</span>
+                    </th>
+                    <th>
+                      <span>Nombre Usuario</span>
+                    </th>
+                    <th>
+                      <span>Email</span>
+                    </th>
+                    <th>
+                      <span>Tipo Usuario</span>
+                    </th>
+                     <th>
+                      <span>Estado</span>
+                    </th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each usuarios }}
+                
+                  <tr>
+                  
+                    <td><a href="/usuario/editarUsuario/{{Rut_Usuario}}">{{Rut_Usuario}}</a> </td>
+                    <td class="text-uppercase">{{NombreP_Usuario}} {{ApellidoP_Usuario}} {{ApellidoM_Usuario}}</td>
+                    <td>{{Email_Usuario}}</td>
+                    <td>{{Tipo_Usuario}}</td>
+                    <td></td>
+                  
+                  </tr>
+                 
+                  {{else}}
+
+                  <div class="col-md-4 mx-auto">
+                    <p>No hay Usuarios inscritos en este Curso</p>
+
+                  </div>
+                    
+                  {{/each}}
+                </tbody>
+              </table>
+
+            </div>
+
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>

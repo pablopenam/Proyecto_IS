@@ -10,7 +10,7 @@ module.exports = {
         if (!req.isAuthenticated()) {
             return next();
         }
-        return res.redirect('/principal');
+        return res.redirect('carpeta/principal');
 
     }
 

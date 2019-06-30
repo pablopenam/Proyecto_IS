@@ -3,8 +3,6 @@ const router = express.Router();
 const pool = require("../database");
 const { isLoggedIn } = require('../lib/auth')
 
-
-
 /**CURSOS */
 
 router.get("/verCurso/:Id_Carpeta", isLoggedIn, async(req, res) => {
@@ -19,11 +17,7 @@ router.get("/verCurso/:Id_Carpeta", isLoggedIn, async(req, res) => {
     res.render("cursos/menu_agregar_curso", { cursos, CARPETA: CARPETA[0] });
 });
 
-/**VISTA DEL FORMULARIO PARA INGRESAR UN CURSO
- * ENTRADA: ID_CARPETA
- * FUNCION: RECIBE POR PARAMETROS EL ID_CARPETA PAR ASIGNARSELA AL NUEVO CURSO QUE SE INGRESARA POR FORMULARIO 
- * SALIDA: ID_CARPETA
- */
+
 router.get("/addCurso/:Id_Carpeta", isLoggedIn, (req, res) => {
     /**RECIBE EL ID_CARPETA QUE VIENE EN LA URL */
     const { Id_Carpeta } = req.params;
@@ -95,23 +89,8 @@ router.get("/mostarCurso/:Id_Curso", isLoggedIn, async(req, res) => {
         i++;
     };
 
-    console.log(alumno)
-        /**var i = 0;
-
-        while (i < cursando.length) {
-            const prueba = Object.values(cursando[i]);
-            console.log(prueba)
-            var alumno = await pool.query("SELECT * FROM alumno WHERE Rut_Alumno = ?", [prueba]);
-            i++;
-        };
-        console.log(alumno)
-        res.render("cursos/mostar_curso", { alumno, curso: curso[0], cursando }); */
-
     res.render("cursos/mostar_curso", { alumno: alumno, curso: curso[0], });
 });
-
-
-
 
 
 /**VISTA DEL FORMULARIO PARA CREAR RUNA RUBRICA NUEVA */
@@ -180,17 +159,10 @@ router.get("/cursos/:Id_Carpeta", isLoggedIn, async(req, res) => {
 
 });
 
-
-
-
-
-
-
 /**Busca los datos en la BD para Editar curso */
 router.get("/editarCurso/:Id_Curso", isLoggedIn, async(req, res) => {
     const { Id_Curso } = req.params;
     const curso = await pool.query('SELECT * FROM curso WHERE Id_Curso = ?', [Id_Curso]);
-    console.log(curso);
     res.render("cursos/editar_curso", { curso: curso[0] });
 });
 
