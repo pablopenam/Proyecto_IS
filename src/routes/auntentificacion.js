@@ -10,7 +10,7 @@ router.get('/signup', isNotloggedin, (req, res) => {
 
 });
 router.post('/signup', isNotloggedin, passport.authenticate('local.signup', {
-    successRedirect: '/',
+    successRedirect: '/carpeta/principal',
     failureRedirect: '/signup',
     failureFlash: true
 }));

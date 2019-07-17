@@ -1,151 +1,188 @@
-function funccriterio3() {
-    $("#tableRubrica3")
+function listacotejo() {
+
+
+    $("#tableListaCotejo").append(
+        $("<tr>")
         .append(
-            $('<tr>')
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%').attr('name', 'criterio').attr('class', 'text-center')
-                )
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_CriterioListaCotejo")
+                .attr("class", "text-center")
             )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
+        )
+        .append(
+            $("<td>").append(
+                $("<input>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Puntuacion_CriterioListaCotejo")
+                .attr("class", "text-center")
             )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
-            )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
-            )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
-            )
+        )
 
-        );
 
+    );
 }
 
-function blas() {
-    var yea = tabla_curso.rows.length - 1;
-    alert(yea);
+function funccriterio3() {
 
 
+    $("#tableRubrica3").append(
+        $("<tr>")
+        .append(
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Criterio")
+                .attr("class", "text-center")
+            )
+        )
+        .append(
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Desempeno")
+                .attr("class", "text-center")
+            )
+        )
+        .append(
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Desempeno")
+                .attr("class", "text-center")
+            )
+        )
+        .append(
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Desempeno")
+                .attr("class", "text-center")
+            )
+        )
 
+
+    );
 }
 
-function tablas(colCount) {
-    var table = document.getElementById('tabla_curso');
-    var rowCount = table.rows.length;
-    for (var i = 0; i < rowCount; i++) {
-        var row = table.rows[i];
-        row.insertCell(colCount);
-    }
-}
+
 
 function funccriterio4() {
-    $("#tableRubrica4")
+    $("#tableRubrica4").append(
+        $("<tr>")
         .append(
-            $('<tr>')
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Criterio")
+                .attr("class", "text-center")
             )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
+        )
+        .append(
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Desempeno")
+                .attr("class", "text-center")
             )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
+        )
+        .append(
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Desempeno")
+                .attr("class", "text-center")
             )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
+        )
+        .append(
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Desempeno")
+                .attr("class", "text-center")
             )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
+        )
+        .append(
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Desempeno")
+                .attr("class", "text-center")
             )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
-            )
+        )
 
-        );
-
+    );
 }
 
 function funccriterio5() {
-    $("#tableRubrica5")
+    $("#tableRubrica5").append(
+        $("<tr>")
         .append(
-            $('<tr>')
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Criterio")
+                .attr("class", "text-center")
             )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
+        )
+        .append(
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Desempeno")
+                .attr("class", "text-center")
             )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
+        )
+        .append(
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Desempeno")
+                .attr("class", "text-center")
             )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
+        )
+        .append(
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Desempeno")
+                .attr("class", "text-center")
             )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
+        )
+        .append(
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Desempeno")
+                .attr("class", "text-center")
             )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
+        )
+        .append(
+            $("<td>").append(
+                $("<textarea>")
+                .attr("type", "text")
+                .attr("style", "width: 100%")
+                .attr("name", "Descripcion_Desempeno")
+                .attr("class", "text-center")
             )
-            .append(
-                $('<td>')
-                .append(
-                    $('<textarea>').attr('type', 'text').attr('style', 'width: 100%')
-                )
-            )
+        )
 
-        );
-
+    );
 }

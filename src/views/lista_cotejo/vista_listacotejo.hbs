@@ -1,0 +1,94 @@
+ <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-md-12 grid-margin">
+            <div class="d-flex justify-content-between flex-wrap">
+              <div class="d-flex align-items-end flex-wrap">
+                
+    
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal nueva carpeta -->
+
+        <div class="row">
+          <div class="col-md-12 stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-title text-uppercase">mis listas de cotejo</div>
+                <hr>
+           <div class="table-responsive mt-3 ">
+              <table class="table table-bordered" id="tabla_curso">
+                <thead>
+                  <tr>
+                    <th>
+                      <span style="font-size: 15px">Nombre </span>
+                    </th>
+                    <th>
+                      <span style="font-size: 15px">Descripcion </span>
+                    </th>
+                    <th>
+                      <span style="font-size: 15px">Acción </span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each ListaCotejo }}
+                
+                  <tr> 
+                 
+                    <td class="text-uppercase" style="font-size: 11px"><a href="/listaCotejo/mostrarListaCotejo/{{Id_ListaCotejo}}">{{Nombre_ListaCotejo}}</a> </td>
+                    <td class="text-uppercase"style="font-size: 11px">{{Descripcion_ListaCotejo}}</td>
+                  
+                    <td> 
+                        <a href="/listaCotejo/eliminarListaCotejo/{{Id_ListaCotejo}}" class="btn btn-danger btn-sm mx-auto" style="font-size: 11px" ><i
+                            class="mdi mdi-delete"></i>Eliminar</a>
+                      </td>
+                 
+                    
+                    
+                   </tr>
+                    
+                  {{else}}
+          
+                  <div class="col-md-4 mx-auto">
+                    <p>No hay Usuarios inscritos en este Curso</p>
+
+                  </div>
+                    
+                  {{/each}}
+                </tbody>
+              </table>
+
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

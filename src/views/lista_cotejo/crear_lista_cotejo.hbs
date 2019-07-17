@@ -1,0 +1,50 @@
+
+  <div class="main-panel">
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-md-12 grid-margin">
+          <div class="d-flex justify-content-between flex-wrap">
+            
+
+          </div>
+        </div>
+      </div>
+      <!-- modal nueva carpeta -->
+
+
+      <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title text-uppercase">Nueva Lista de Cotejo</h4>
+            <hr>
+            <form action="/listaCotejo/addlistaCotejo" method="post">
+              <div class="row">
+
+                <div class=" row form-group col-md-12">
+                  <label for="Nombre_ListaCotejo" class="col-form-label col-md-2">Nombre:</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control ml2 col-md-8" name="Nombre_ListaCotejo" id="Nombre_ListaCotejo"
+                      maxlength="50" placeholder="Nombre Lista Cotejo" >
+                  </div>
+                </div>
+                <div class=" row form-group col-md-12">
+                  <label for="Descripcion_ListaCotejo" class="col-form-label col-md-2">Descripción:</label>
+                  <div class="col-md-10">
+                    <textarea name="Descripcion_ListaCotejo" id="Descripcion_ListaCotejo" class="form-control col-md-8" rows="2"
+                      maxlength="150" placeholder="Descripción Lista cotejo" ></textarea>
+                  </div>
+                </div>
+              </div>
+            <hr>
+                <div class="row form-group mt-2">
+                  <div class="col-md-3 mx-auto "><input type="submit" class="form-control btn btn-success" value="Crear Lista Cotejo"></div>
+                </div>
+             
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  

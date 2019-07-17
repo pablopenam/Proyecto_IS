@@ -1,0 +1,83 @@
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 grid-margin">
+                <div class="d-flex justify-content-between flex-wrap">
+                    <div class="d-flex align-items-end flex-wrap">
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal nueva carpeta -->
+
+        <div class="row">
+            <div class="col-md-12 stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title text-uppercase">Seleccion de Curso</div>
+                        <hr>
+                        <form name="formulario" class="mt-3" action="/evaluacion/evaluarLC" method="POST">
+
+
+
+                            <div class="row form-group">
+                                <label for="Nombre_Carpeta" class="col-form-label col-md-2 ml-2">Curso:</label>
+                                <div class="col-md-3">
+                                    <select id="inputState" name="Id_Curso" class="form-control">
+                                        <option selected>Seleccionar Curso</option>
+                                        {{#each curso}}
+                                        <option value="{{Id_Curso}}">{{Nombre_carpeta}}-->{{Nombre_Curso}}</option>
+                                        {{/each}}
+
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="row form-group">
+                                <label for="Nombre_Carpeta" class="col-form-label col-md-2 ml-2">Rubrica :</label>
+                                <div class="col-md-3">
+                                    <select id="inputState" class="form-control" disabled>
+                                        <option selected>Seleccionar Rubrica</option>
+                                        {{#each rubrica}}
+                                        <option value="">{{Nombre_Rubrica}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="row form-group">
+                                <label for="Nombre_Carpeta" class="col-form-label col-md-2 ml-2">Lista de
+                                    Cotejo:</label>
+                                <div class="col-md-3">
+                                    <select id="inputState" name="Id_ListaCotejo" class="form-control">
+                                        <option selected>Seleccionar Rubrica</option>
+                                        {{#each listacotejo}}
+                                        <option value="{{Id_ListaCotejo}}">{{Id_ListaCotejo}}/{{Nombre_ListaCotejo}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <hr>
+                            <div class="row form-group mt-2">
+                                <div class="col-md-4 "><a href="/carpeta/principal"
+                                        class="btn-sm w-50 btn btn-success">volver</a></div>
+                                <div class="col-md-4 mx-auto "></div>
+                                <div class="col-md-4 "><input type="submit"
+                                        class="float-right w-50 btn btn-success btn-sm"
+                                        style="color: white; background-color: #143FDE;" value="Crear Evaluacion"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

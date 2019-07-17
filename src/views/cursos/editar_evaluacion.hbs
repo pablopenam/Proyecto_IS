@@ -1,0 +1,111 @@
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-md-12 grid-margin">
+        <div class="d-flex justify-content-between flex-wrap">
+          <div class="d-flex align-items-end flex-wrap">
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-uppercase">Editar Evaluacion</h5>
+            <hr>
+            <form name="formulario" class="mt-3" action="/curso/editarEvaluacion/{{evaluacion.Id_Evaluacion}}"
+              method="POST">
+
+              <div class=" row form-group">
+                <label for="Nombre_Evaluacion" class="col-form-label col-md-2">Nombre Evaluacion:</label>
+                <div class="col-md-2">
+                  <input type="text" class="form-control ml2" name="Nombre_Evaluacion" id="Nombre_Evaluacion"
+                    maxlength="50" value="{{evaluacion.Nombre_Evaluacion}}" required>
+                  <input type="hidden" name="Id_Curso" value="{{evaluacion.Id_Curso}}">
+                </div>
+              </div>
+              <div class=" row form-group">
+                <label for="Ponderacion_Evaluacion" class="col-form-label col-md-2">Ponderacion:</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control ml2" name="Ponderacion_Evaluacion" id="Ponderacion_Evaluacion"
+                    maxlength="50" value="{{evaluacion.Ponderacion_Evaluacion}}">
+                </div>
+              </div>
+
+            
+
+        {{#if archivo}}
+
+         <div class=" row form-group">
+                <label for="Ponderacion_Evaluacion" class="col-form-label col-md-2">Pauta:</label>
+                <div class="col-md-3">
+                  <embed width="600px" height="400px" src="/img/{{archivo.Nombre_Archivo}}" type="{{archivo.Tipo_Archivo}}">
+                </div>
+              </div>
+             
+
+              {{else}}
+               <div class=" row form-group">
+                <div class="col-md-4 col-sm-12 "><a data-toggle="modal" href="#modal_editar"
+                    class="btn-sm w-50 btn btn-success">Subir Pauta</a></div>
+              </div>
+        {{/if}}
+
+              <hr>
+              <div class="row form-group mt-2">
+                <div class="col-md-3 col-sm-12 "><a href="" class="btn-sm w-50 btn btn-success">volver</a></div>
+                <div class="col-md-3 mx-auto "><a
+                    href="/curso/eliminarEvaluacion/{{evaluacion.Id_Evaluacion}}/{{evaluacion.Id_Curso}}"
+                    class="btn-sm w-50 btn btn-success">Eliminar</a></div>
+                <div class="col-md-3 col-sm-12 "><input type="submit" class="btn-sm w-50 btn btn-success"
+                    value="Editar">
+
+                </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal_editar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" style="width: 65% !important;">
+        <div class="modal-content">
+
+          <!--Parte de arriba (Header) del modal.-->
+          <div class="modal-header">
+            <h1 class="box-title">Configuracíon
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </h1>
+          </div>
+
+          <!--Parte principal (body) del modal.-->
+          <div class="modal-body">
+            <!--Aqui inicia el formulario el cual tiene el onsubmit para validar, antes de irse a otra pagina.-->
+
+
+            <form action='/curso/upload/{{evaluacion.Id_Evaluacion}}' method="POST" enctype="multipart/form-data">
+              <input type="file" name="file">
+              <input type="submit" value="Subir">
+            </form>
+          </div>
+
+          <!--Parte baja (footer) del modal (no suele llevar nada).-->
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- content-wrapper ends -->
+    <!-- partial:partials/_footer.html -->
+
+    <!-- partial -->
+  </div>
+  <!-- main-panel ends -->
+</div>

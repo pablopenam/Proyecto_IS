@@ -1,0 +1,52 @@
+
+   <div class="main-panel">
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-md-12 grid-margin">
+          <div class="d-flex justify-content-between flex-wrap">
+            
+
+          </div>
+        </div>
+      </div>
+      <!-- modal nueva carpeta -->
+
+
+      <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title text-uppercase">Seleccion de alumnos a evaluar</h4>
+            <hr> <form action="/evaluacion/nueva_evaluacion" method="post">
+              <div class="container" style="
+     width:300px; max-height:700px; float:left; border-radius:5px; border:2px solid; margin-top:10px; margin-left: 25px">
+     <form action="">
+            <h6>Alumnos</h6>
+            <hr>
+            {{#each alumno}}
+               
+                 <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" name="Rut_Alumno"  value="{{Rut_Alumno}}"id="exampleCheck1" style="font-size: 13px;">
+    <label class="form-check-label" for="exampleCheck1" style="font-size: 13px;">{{NombreP_Alumno}} {{NombreS_Alumno}} {{ApellidoP_Alumno}} {{ApellidoM_Alumno}}</label>
+  </div>          
+              {{/each}}
+
+        </div>
+  <hr>
+
+            <div class="col-md-4 "></div>
+            <div class="col-md-4 mx-auto "><input type="submit" class="float-right w-50 btn btn-success btn-sm"
+                style="color: white; background-color: #143FDE;" value="Evaluar"></div>
+            <div class="col-md-4  mr-2 "></div>
+          </div>
+          </form>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+ 
+ 
+ 
+ 
+ 

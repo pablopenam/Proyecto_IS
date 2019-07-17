@@ -63,7 +63,7 @@ router.post("/buscarAlumno/:Id_Curso", isLoggedIn, async(req, res) => {
 router.post("/cursandoCurso/:Id_Curso/:Rut_Alumno", isLoggedIn, async(req, res) => {
     const { Id_Curso, Rut_Alumno } = req.params;
     const newcursando = { Id_Curso, Rut_Alumno };
-    const cursando = await pool.query("SELECT * FROM cursando WHERE Rut_Alumno = ?", [Rut_Alumno]);
+    const cursando = await pool.query("SELECT * FROM cursando WHERE Rut_Alumno = ? AND Id_Curso = ?", [Rut_Alumno, Id_Curso]);
     if (cursando.length > 0) {
         res.redirect("/curso/mostarCurso/" + Id_Curso);
     } else {
@@ -79,17 +79,15 @@ router.get("/mostarCurso/:Id_Curso", isLoggedIn, async(req, res) => {
     const curso = await pool.query("SELECT * FROM curso WHERE Id_Curso = ?", [Id_Curso]);
     const cursando = await pool.query("SELECT Rut_Alumno FROM cursando WHERE Id_Curso = ? ", [Id_Curso]);
 
-    var i = 0;
 
-    var alumno = new Array();
 
-    while (i < cursando.length) {
-        const prueba = Object.values(cursando[i]);
-        alumno[i] = await pool.query("SELECT * FROM alumno WHERE Rut_Alumno = ?", [prueba]);
-        i++;
-    };
 
-    res.render("cursos/mostar_curso", { alumno: alumno, curso: curso[0], });
+    const alumno = await pool.query("SELECT * FROM alumno JOIN cursando USING(Rut_Alumno) WHERE Id_Curso=? ", [Id_Curso]);
+    const evaluacion = await pool.query("SELECT * FROM evaluacion WHERE Id_Curso = ?", [Id_Curso]);
+
+
+
+    res.render("cursos/mostar_curso", { alumno, curso: curso[0], evaluacion });
 });
 
 
@@ -205,4 +203,102 @@ router.get("/eliminarCurso/:Id_Curso/:Id_Carpeta", isLoggedIn, async(req, res) =
     }
 
 });
+router.post("/agregarEvaluacion", isLoggedIn, async(req, res) => {
+    const { Id_Curso, Nombre_Evaluacion, Ponderacion_Evaluacion } = req.body;
+    const newEvaluacion = {
+        Nombre_Evaluacion,
+        Ponderacion_Evaluacion,
+        Id_Curso
+    };
+
+
+    await pool.query("INSERT INTO evaluacion set ?", [newEvaluacion]);
+    res.redirect("/curso/mostarCurso/" + Id_Curso);
+
+});
+/**Editar Evaluacion del Curso(lISTO NO TOCAR) */
+router.get("/editarEvaluacion/:Id_Evaluacion", async(req, res) => {
+    const { Id_Evaluacion } = req.params;
+    const archivo = await pool.query("SELECT * FROM archivo WHERE Id_Evaluacion = ?", [Id_Evaluacion]);
+
+    console.log(archivo);
+
+    const evaluacion = await pool.query("SELECT * FROM evaluacion WHERE Id_Evaluacion = ?", [Id_Evaluacion]);
+
+    res.render("cursos/editar_evaluacion", { evaluacion: evaluacion[0], archivo: archivo[0] });
+});
+
+
+
+
+
+
+/**Editar Evaluacion del Curso(lISTO NO TOCAR) */
+router.post("/editarEvaluacion/:Id_Evaluacion", async(req, res) => {
+    const { Id_Evaluacion } = req.params;
+    const { Nombre_Evaluacion, Ponderacion_Evaluacion, Id_Curso } = req.body;
+    const editevaluacion = {
+        Id_Evaluacion,
+        Nombre_Evaluacion,
+        Ponderacion_Evaluacion,
+        Id_Curso
+    }
+
+    console.log(editevaluacion);
+
+    const evaluacion = await pool.query("UPDATE evaluacion set ? WHERE Id_evaluacion = ?", [editevaluacion, Id_Evaluacion]);
+
+
+    res.redirect("/curso/mostarCurso/" + Id_Curso);
+});
+/**Eliminar Evaluacion del Curso (LISTO NO TOCAR) */
+router.get("/eliminarEvaluacion/:Id_Evaluacion/:Id_Curso", async(req, res) => {
+    const { Id_Evaluacion, Id_Curso } = req.params;
+
+    const evaluacion = await pool.query("DELETE FROM evaluacion WHERE Id_Evaluacion = ?", [Id_Evaluacion]);
+
+    res.redirect("/curso/mostarCurso/" + Id_Curso);
+});
+
+
+/**eliminar Alumno Curso(LISTO NO TOCAR) */
+router.get("/eliminarAlumno/:Id_Curso/:Rut_Alumno", async(req, res) => {
+    const { Id_Curso, Rut_Alumno } = req.params;
+
+    await pool.query("DELETE FROM cursando WHERE Rut_Alumno = ? AND Id_Curso= ?", [Rut_Alumno, Id_Curso]);
+
+    res.redirect("/curso/mostarCurso/" + Id_Curso);
+});
+
+
+
+/**Cargar un archivo al servidor */
+router.post('/upload/:Id_Evaluacion', async(req, res) => {
+    const { Id_Evaluacion } = req.params;
+
+
+    const archivo = await pool.query("SELECT * FROM archivo WHERE Id_Evaluacion = ?", [Id_Evaluacion]);
+
+    if (archivo.length > 0) {
+        res.redirect("/curso/editarEvaluacion/" + Id_Evaluacion);
+    } else {
+
+        console.log(Id_Evaluacion);
+        let EDFile = req.files.file
+        EDFile.mv(`./src/public/img/${EDFile.name}`);
+        console.log(EDFile);
+        const archivo = {
+            Nombre_Archivo: EDFile.name,
+            Tipo_Archivo: EDFile.mimetype,
+            Id_Evaluacion
+        };
+        console.log(archivo);
+        await pool.query("INSERT INTO archivo SET ?", [archivo]);
+        res.redirect("/curso/editarEvaluacion/" + Id_Evaluacion);
+    }
+
+
+});
+
+
 module.exports = router;

@@ -9,6 +9,8 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session');
 const passport = require('passport');
+const fileUpload = require('express-fileupload');
+
 
 const { database } = require('./keys');
 
@@ -43,6 +45,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(fileUpload());
+
 
 
 /**ESTAS SON VARIABLES GLOBALES*/
@@ -62,8 +66,12 @@ app.use('/curso', require('./routes/curso'));
 app.use('/rubrica', require('./routes/rubricas'));
 app.use('/carpeta', require('./routes/carpeta'));
 app.use('/usuario', require('./routes/usuario'));
+app.use('/listaCotejo', require('./routes/lista_cotejo'));
+app.use('/evaluacion', require('./routes/evaluacion'));
+
 //public
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 /**AQUI LA APLICACCION ESCUCHA EN PUERTO EN DONDE SE CONECTARA AL SERVIDOR */
 

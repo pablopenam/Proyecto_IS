@@ -1,82 +1,56 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/dataTables.bootstrap4.css">
-    <link rel="stylesheet" href="/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <title>SEDO-Gestion Evaluaciones</title>
-    {{!--Google Fonts--}}
-    
-    {{!--Boostrap 4--}}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    {{!--Font Awsome--}}
-  
+	<title class="text-uppercase">SEDO</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+	<link rel="stylesheet" href="/css/fontello.css">
+	<link rel="stylesheet" href="/css/estilos.css">
+	<link rel="stylesheet" href="/fonts/fontello.woff2">
+	
+</head>
+</head>
 <body>
-     <div class="container-scroller">
 
-   {{>navegacion}}
-    {{#if user}}   
-  <div class="container-fluid page-body-wrapper">
-   <nav class="sidebar sidebar-offcanvas" id="sidebar">
-    <ul class="nav">
-      <br>
-      <br>
-      <br>
-      <br><br>
-      <br>
-      <li class="nav-item">
-        <a class="nav-link" href="/curso/principal">
-          <i class="mdi mdi-home menu-icon"></i>
-          <span class="menu-title">Menú Principal</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-          <i class="mdi mdi-circle-outline menu-icon"></i>
-          <span class="menu-title">Rúbricas</span>
-          <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="ui-basic">
+		 {{>navegacion}}
 
-        
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/rubrica/prueba">Nueva Rubrica</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Rubricas Guardadas</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </nav>
-     {{/if}}    
-    {{{ body }}}
-    </div>
-  </div> 
-    
-   <script src="/js/agregarcriterio.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="/js/dashboard.js"></script>
-  <script src="/js/data-table.js"></script>
-  <script src="/js/dataTables.bootstrap4.js"></script>
-  <script src="/js/hoverable-collapse.js"></script>
-  <script src="/js/jquery.dataTables.js"></script>
-  <script src="/js/off-canvas.js"></script>
-  <script src="/js/vendor.bundle.base.js"></script>
+		
+<div class="container-fluid" >
+	
+    <div class="row ">
+		{{#if user}}
+   	   <div class="barra-lateral col-12 col-sm-auto">
+   	            <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
+					<a href="/carpeta/principal" style="font-size: 11px"><i >MP</i><span>Menu Principal</span></a>
+					<a href="/rubrica/prueba/"  style="font-size: 11px"><i >RU</i><span>Crear Rubrica</span></a>
+					<a href="/rubrica/rubricas"  style="font-size: 11px"><i >MRU</i><span>Mis Rubricas</span></a>
+					<a href="/listaCotejo/addlistaCotejo/"  style="font-size: 11px"><i>LC</i><span>Crear Lista de Cotejo</span></a>
+					<a href="/listaCotejo/listasCotejos/"  style="font-size: 11px"><i >MLC</i><span>Mis Listas de Cotejo</span></a>
+					<a href="/evaluacion/"  style="font-size: 11px"><i>EV</i><span>Evaluar</span></a>
+				</nav>
+   	   </div>
+	{{/if}}
+
+   	   <main class="main col" style="margin: solid 1px">
+   	   	<div class="row" >
+
+					
+				<div class="columna col-lg-12">
+   	   	           {{{ body }}}
+<!-- 
+   	   	            aca va el contenido , le agreggue un div de prueba que corresponde al de estadisticas -->
+   	   	           
+				</div>
+
+   	   	</div>
+   	   </main>
+     </div>
+   </div>
+	<script src="/js/agregarcriterio.js"></script>
+	<script src="/js/jquery-3.2.1.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

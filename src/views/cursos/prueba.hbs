@@ -5,15 +5,8 @@
         <div class="col-md-12 grid-margin">
           <div class="d-flex justify-content-between flex-wrap">
             <div class="d-flex align-items-end flex-wrap">
-              <div class="mr-md-3 mr-xl-5">
-
-                <p class="mb-md-0">Acontinuación podrá crear su Rúbrica.</p>
-              </div>
-              <div class="d-flex">
-                <i class="mdi mdi-home text-muted hover-cursor"></i>
-                <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Menú Principal&nbsp;/&nbsp;</p>
-                <p class="text-primary mb-0 hover-cursor">Crear Rúbrica</p>
-              </div>
+             
+           
             </div>
 
           </div>
@@ -25,7 +18,7 @@
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Nueva Rúbrica</h4>
+            <h6 class="card-title text-uppercase">Nueva Rubrica</h6>
             <hr>
             <form action="/rubrica/prueba" method="post">
               <div class="row">
@@ -45,7 +38,7 @@
                   </div>
                 </div>
                 <div class=" row form-group col-md-12">
-                  <label for="Descripcion_Rubrica" class="col-form-label col-md-2">Niveles de Desempeño de la Rubrica:</label>
+                  <label for="Descripcion_Rubrica" class="col-form-label col-md-2">Niveles de Desempeño:</label>
                   <div class="col-md-8">
                   <select name="Nivel_Desempeno_Rubrica" id="" class="form-control ml2 col-md-8" required>
                     <option value="">Seleccionar Nivel de Desempeño</option>
@@ -59,7 +52,9 @@
               </div>
             <hr>
                 <div class="row form-group mt-2">
-                  <div class="col-md-3 mx-auto "><input type="submit" class="form-control btn btn-success" value="Crear Rúbrica"></div>
+                   <div class="col-md-4 "><a href="#" class="btn-sm w-50 btn btn-success">Volver</a></div>
+                    <div class="col-md-4 mx-auto "></div>
+                  <div class="col-md-4 "><input type="submit" class="float-right w-50 btn btn-success btn-sm" style="color: white; background-color: #143FDE;" value="Crear Rúbrica"></div>
                 </div>
              
             </form>

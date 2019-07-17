@@ -18,7 +18,7 @@ router.get("/addCarpeta", isLoggedIn, async(req, res) => {
 router.get("/editarCarpeta/:Id_Carpeta", isLoggedIn, async(req, res) => {
     const { Id_Carpeta } = req.params;
     const carpeta = await pool.query('SELECT * FROM carpeta WHERE Id_Carpeta = ?', [Id_Carpeta]);
-    console.log(carpeta);
+
     res.render("cursos/editar_carpeta", { carpeta: carpeta[0] });
 });
 /**Agrega carpeta en la BD */

@@ -27,7 +27,8 @@ passport.use(
                 ApellidoM_Usuario,
                 Email_Usuario,
                 Password_Usuario,
-                Tipo_Usuario: "Normal"
+                Tipo_Usuario: "Normal",
+                Estado_Usuario: "Activado"
             };
             nuevoUsuario.Password_Usuario = await helpers.encryptPassword(
                 Password_Usuario
