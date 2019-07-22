@@ -63,16 +63,20 @@ Como construir el proyecto
 
 Para cargar y probar el proyecto abra una terminal o consola de comandos en un directorio de trabajo
 
-1. Descarge express desde la terminal o consola con los siguientes comandos::
 
+1. Descarge express desde la terminal o consola con los siguientes comandos::
+    
+  En Linux (debian, ubuntu y derivados) mediante la terminal (Crtl+Alt+t)::
+  
     npm install -g create-react-native-app
     npm install -g react-native-cli
-   
+    
    Recuerde utilizar en comando `sudo` si esta en un sistema operativo linux.
+
    
 2. Descarge e instale expo::
 
-    npm install -g expo-cli
+       npm install -g expo-cli
    
    Recuerde utilizar en comando `sudo` si esta en un sistema operativo linux.   
 
@@ -80,19 +84,19 @@ Para cargar y probar el proyecto abra una terminal o consola de comandos en un d
 
 4. Clone el proyecto desde github escribiendo en la terminal::
 
-    git clone https://github.com/pablopenam/Proyecto_IS.git
+       git clone https://github.com/pablopenam/Proyecto_IS.git
 
 5. Cambie de directorio a la carpeta del proyecto con::
 
-    cd Proyecto_IS
+       cd Proyecto_IS
 
 6. Instale las dependencia del proyecto con::
 
-    npm install
+       npm install
 
 7. Pruebe el proyecto utilizando en comando::
 
-    npm start
+       npm start
 
 8. Si el proyecto dice que falta un paqueto no el nombre <nombre_paquete>, haga lo siguiente::
 
